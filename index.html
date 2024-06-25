@@ -3,20 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Aquascape</title>
+
     <link rel="stylesheet" href="./assets/css/style.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-    </style>
 </head>
 <body>
+    <div class="modal-menu ">
+        <ul class="modal-menu-content">
+            <li class="nav-item">Home</li>
+            <li class="nav-item">Plantes</li>
+            <li class="nav-item">Mon compte</li>
+            <li class="nav-item">Contact</li>
+        </ul>
+    </div>
     <header class="section section--header">
+        <nav>
+            <div class="nav-container">
+                <ul class="nav-content">
+                    <li class="nav-item">Home</li>
+                    <li class="nav-item">Plantes</li>
+                    <li class="nav-item">Mon compte</li>
+                    <li class="nav-item">Contact</li>
+                </ul>
+                <div class="menu-hamburger-content">
+                    <label for="menu-hamburger">
+                    <img src="./assets/images/icons/menu.svg" alt="icon de menu hamburger">
+                    </label>
+                    <input  type="checkbox"name="menu-*hamburger" id="menu-hamburger">
+                </div>
+            </div>
+        </nav>
         <div class="page-container">
             <div class="column column--left">
                 <h1 class="section__title">Bienvenue chez Aquascape</h1>
                 <p class="section__text">Aquascape est une boutique en ligne dédié à l'aquascaping. Transformez votre aquarium en un véritable chef-d'œuvre naturel. Découvrez notre sélection exclusive de plantes aquatiques, et équipements de qualité supérieure pour créer des paysages aquatiques époustouflants. Plongez dans l'art de l'aquascaping avec Aquascape et laissez libre cours à votre créativité !</p>
                 <div class="section__controls">
-                    <a href="" class="btn btn--more">En savoir plus</a>                    
+                    <a href="#" class="btn btn--more">En savoir plus</a>                    
                 </div>
             </div>
             <div class="column column--right">
@@ -26,56 +49,90 @@
             </div>
         </div>
     </header>
-<section class="section section--gallery" >
-    <div class="gallery--container">
-        <h2 class="section__title--gallery">Nos variétés de plantes</h2>
-        <div class="section__filter">
-            <div class=" btn__show--all">Tout</div>
-            <div class=" btn__foreground">Premier plan</div>
-            <div class=" btn__second--plan">Second plan</div>
-            <div class=" btn__background">Arrière plan</div>
-        </div>
-        <div class="gallery--figures">
-            <div class="gallery--cards">
-                <img class="gallery-img" src="./assets/images/Plantes/anubia.webp" alt="">
-                <h3 class="gallery--cards--title">Anubia</h3>
-                <p class="gallery-description">La plus petite des Anubias! Avec des feuilles de moins d'un centimètre de large</p>
-                <div class="gallery-price">4.75€</div>
-            </div>
-            <div class="gallery--cards">
-                <img class="gallery-img" src="./assets/images/Plantes/Bacoba.webp" alt="">
-                <h3 class="gallery--cards--title">Bacoba</h3>
-                <p class="gallery-description">Très belle plante d'aquarium d'un très beau vert, très simple à maintenir puisque très peu exigeante sur la qualité du substrat</p>
-                <div class="gallery-price">4.15€</div>
-            </div>
-            <div class="gallery--cards">
-                <img class="gallery-img" src="./assets/images/Plantes/blyxa.webp" alt="">
-                <h3 class="gallery--cards--title">Blyxa</h3>
-                <p class="gallery-description">Superbe plante la blyxa japonica offre une belle possibilité pour la création de bosquets en aquarium</p>
-                <div class="gallery-price">5.25€</div>
-            </div>
-            <div class="gallery--cards">
-                <img class="gallery-img" src="./assets/images/Plantes/eleocharis.webp" alt="">
-                <h3 class="gallery--cards--title">Eleocharis</h3>
-                <p class="gallery-description">Eleocharis parvula  avec ses feuilles courtes, sa croissance aisée, une des meilleures plantes tapissantes de premier plan.</p>
-                <div class="gallery-price">4.95€</div>
-            </div>
-            <div class="gallery--cards">
-                <img class="gallery-img" src="./assets/images/Plantes/glossostigma.webp" alt="">
-                <h3 class="gallery--cards--title">Glossostigma</h3>
-                <p class="gallery-description">L'une des plus petites plantes d'aquarium, donc à placer à l'avant-plant.</p>
-                <div class="gallery-price">5.25€</div>
-            </div>
-            <div class="gallery--cards">
-                <img class="gallery-img" src="./assets/images/Plantes/hemianthus.webp" alt="">
-                <h3 class="gallery--cards--title">Anubia</h3>
-                <p class="gallery-description">Hemianthus callitrichoides, compte parmi les plus petites plantes aquatiques qui existent, elle se propage sur le fond de l'aquarium</p>
-                <div class="gallery-price">4€</div>
-            </div>
-        </div>
-    </div>
 
-</section>
+    <section class="section section--gallery">
+        <div class="gallery--container">
+            <header>
+                <h2 class="section__title--gallery">Nos variétés de plantes</h2>
+            </header>
+
+
+            <input type="radio" name="filter" id="all" checked/>
+            <input type="radio" name="filter" id="foreground" />
+            <input type="radio" name="filter" id="second-plan" />
+            <input type="radio" name="filter" id="background" />
+
+            <div class="section__filter">
+                <label class="btn__show--all" for="all">Tout</label>
+                <label class="btn__foreground" for="foreground">Premier plan</label>
+                <label class="btn__second--plan" for="second-plan">Second plan</label>
+                <label class="btn__background" for="background">Arrière plan</label>
+            </div>
+
+            <div class="gallery--figures">
+
+                <div class="gallery--cards all foreground">
+                    <img class="gallery-img" src="./assets/images/Plantes/anubia.webp" alt="">
+                    <h3 class="gallery--cards--title">Anubia</h3>
+                    <p class="gallery-description">La plus petite des Anubias! Avec des feuilles de moins d'un centimètre de large</p>
+                    <div class="gallery-price">4.75€</div>
+                </div>
+                <div class="gallery--cards all second-plan">
+                    <img class="gallery-img" src="./assets/images/Plantes/Bacoba.webp" alt="">
+                    <h3 class="gallery--cards--title">Bacoba</h3>
+                    <p class="gallery-description">Très belle plante d'aquarium d'un très beau vert, très simple à maintenir puisque très peu exigeante sur la qualité du substrat</p>
+                    <div class="gallery-price">4.15€</div>
+                </div>
+                <div class="gallery--cards all background">
+                    <img class="gallery-img" src="./assets/images/Plantes/blyxa.webp" alt="">
+                    <h3 class="gallery--cards--title">Blyxa</h3>
+                    <p class="gallery-description">Superbe plante la blyxa japonica offre une belle possibilité pour la création de bosquets en aquarium</p>
+                    <div class="gallery-price">5.25€</div>
+                </div>
+                <div class="gallery--cards all foreground">
+                    <img class="gallery-img" src="./assets/images/Plantes/eleocharis.webp" alt="">
+                    <h3 class="gallery--cards--title">Eleocharis</h3>
+                    <p class="gallery-description">Eleocharis parvula  avec ses feuilles courtes, sa croissance aisée, une des meilleures plantes tapissantes de premier plan.</p>
+                    <div class="gallery-price">4.95€</div>
+                </div>
+                <div class="gallery--cards all foreground">
+                    <img class="gallery-img" src="./assets/images/Plantes/glossostigma.webp" alt="">
+                    <h3 class="gallery--cards--title">Glossostigma</h3>
+                    <p class="gallery-description">L'une des plus petites plantes d'aquarium, donc à placer à l'avant-plant.</p>
+                    <div class="gallery-price">5.25€</div>
+                </div>
+                <div class="gallery--cards all foreground">
+                    <img class="gallery-img" src="./assets/images/Plantes/hemianthus.webp" alt="">
+                    <h3 class="gallery--cards--title">Anubia</h3>
+                    <p class="gallery-description">Hemianthus callitrichoides, compte parmi les plus petites plantes aquatiques qui existent, elle se propage sur le fond de l'aquarium</p>
+                    <div class="gallery-price">4€</div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- 
+        TODO: 
+        - Terminer la gallery
+        - Faire la navigation
+        -- Desktop: une barre de navigation
+        -- Responsive: on affiche un btn hamburger
+        ---- Quand on clique sur le btn on affiche une modale
+        - Faire une section Formulaire « contact » : https://cdn.jotfor.ms/assets/img/landing/minimals/contact-form-generator/form03.png
+        - Champs : 
+        ---- Prénom
+        ---- Nom
+        ---- Date de naissance
+        ---- Email
+        ---- Sexe => radio custom => https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0JM9oGNK-cGSzZP7lsh4ElUIwNCHu3SXhf7owh1BQ1oTKwIG3vJoB_isck9OG0M3Y9Jk&usqp=CAU
+        ---- Dropdown sujets (avec plusieurs possibilités) => select custom => https://avaricum-bourges.com/emploi/
+        ---- Message
+        ---- Button envoyer
+
+
+    
+    -->
 
 
 </body>

@@ -1,13 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500,700;&display=swap');
+
+:root {
+    --color-white: white;
+    --color-green: #3A5622;
+    --color-black: black;
+
+    --color-grey: #e5e9e3;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
 }
 
 a {
     text-decoration: none;
-    color: white;
+    color: var(--color-white);
 }
 
 ul, ol{
@@ -21,6 +30,74 @@ button {
 
 html, body {
     width:100%;
+    font-family: "Poppins", sans-serif;
+}
+.nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 60px;
+    background-color: var(--color-white);
+}
+.nav-content{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 50px;
+    cursor: pointer;
+    color: var(--color-green);
+}
+.nav-item{
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.nav-item:hover{
+    color: var(--color-black);
+}
+.nav-item::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0px;
+    height: 2px;
+    transition: width 0.2s ease;
+    background-color: var(--color-black);
+}
+.nav-item:hover::after{
+    width: 100%;
+    
+}
+.menu-hamburger-content{
+    display: none;
+}
+.modal-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 65%;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    background: rgba(58, 86, 34, 0.58);
+    backdrop-filter: blur(6.6px);
+}
+.modal-menu-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    cursor: pointer;
+    gap: 60px;
+
 }
 .page-container{
     max-width: 1440px;
@@ -30,23 +107,27 @@ html, body {
     gap: 30px;
     margin: 0 auto;
 }
+
 .section--header{
     position: relative;
-    background-color: #3A5622;
+    background-color: var(--color-green);
     width: 100%;
     min-height: 385px;
     height: 45%;
-
 }
+
 .section--header::before{
-        position: absolute;
-        background-color: white; 
-        width: 100%;
-        height: 80px;
-        content: '';
-        bottom: -80px;
-        left: 0;
-    }
+    content: '';
+    
+    width: 100%;
+    height: 80px;
+   
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+
+    background-color: var(--color-white); 
+}
 
 .column--left{
     position: relative;
@@ -57,7 +138,7 @@ html, body {
     justify-content: center;
     width: 25%;
     height: 100%;
-    color: white;
+    color: var(--color-white);
 
 }
 .section__title{
@@ -75,11 +156,11 @@ html, body {
 .section__controls{
     width: auto;
     border-radius: 25px;
-    background-color: black;
+    background-color: var(--color-black);
     padding: 10px 20px;
 }
 .section__controls:hover{
-    background-color: #3A5622;
+    background-color:var(--color-green);
 }
 .column--right{
     position: relative;
@@ -100,7 +181,7 @@ img{
 .section--gallery{
     margin-top: 120px;
     width: 100%;
-    background-color: #e5e9e3;
+    background-color: var(--color-grey);
 
 }
 .gallery--container{
@@ -132,8 +213,8 @@ img{
 .btn__second--plan,
 .btn__background{
     width: 10%;
-    color: black;
-    border: 1px solid black;
+    color: var(--color-black);
+    border: 1px solid var(--color-black);
     border-radius: 5px;
     padding: 10px 15px;
     font-size: 1rem;
@@ -143,13 +224,13 @@ img{
 .btn__foreground:hover,
 .btn__second--plan:hover,
 .btn__background:hover{
-    color: white;
-    background-color: #3A5622;
+    color: var(--color-white);
+    background-color: var(--color-green);
 }
-.btn__show--all:not(:hover){
-    color: white;
-    background-color: black;
-}
+/* .btn__show--all:not(:hover){ 
+    color: var(--color-white);
+    background-color: var(--color-black);
+}*/
 
 .gallery--figures{
     max-width: 740px;
@@ -168,7 +249,7 @@ img{
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    background-color: white;
+    background-color: var(--color-white);
     max-width: 200px;
     width: 100%;
     height: 350px;
@@ -206,6 +287,54 @@ img{
     align-items: center;
     justify-content: center;
 }
+
+
+/** Inputs **/
+.section--gallery input[type="radio"]{
+    display: none;
+}
+
+/** default cards **/
+.gallery--cards{
+    display: none;
+}
+
+
+/** quand on check l'input all on affiche la card  **/
+.section--gallery  input[id="all"]:checked ~ .gallery--figures .all{
+    display: block;
+}
+
+/** quand on check l'input all on affiche le label autrement  **/
+#all:checked ~ .section__filter .btn__show--all  {
+    color:var(--color-white);
+    background-color: var(--color-black);
+}
+
+#foreground:checked ~ .gallery--figures .foreground{
+    display: block;
+}
+#foreground:checked ~ .section__filter .btn__foreground{
+    color:var(--color-white);
+    background-color: var(--color-black)
+}
+
+#second-plan:checked ~ .gallery--figures .second-plan{
+    display: block;
+}
+#second-plan:checked ~ .section__filter .btn__second--plan{
+    color:var(--color-white);
+    background-color: var(--color-black)
+}
+
+#background:checked ~ .gallery--figures .background{
+    display: block;
+}
+#background:checked ~ .section__filter .btn__background{
+    color:var(--color-white);
+    background-color: var(--color-black)
+}
+
 @media (max-width:1348px){
     .btn__show--all,
     .btn__foreground,
@@ -228,6 +357,31 @@ img{
 }
 }
 @media (max-width:750px) {
+    .nav-content{
+        opacity: 0;
+    }
+    .menu-hamburger-content{
+        display: block;
+        width: 10%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .menu-hamburger-content label{
+        cursor: pointer;
+    }
+    .menu-hamburger-content input[type="checkbox"] {
+        display: none;
+    }
+    .menu-hamburger-content input[id="menu-hamburger"]:checked ~ .nav-container .nav-content{
+        opacity: 1;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 999;
+        margin: 20px;
+    }
     .page-container{
         flex-direction: column;
         gap: 0px;
