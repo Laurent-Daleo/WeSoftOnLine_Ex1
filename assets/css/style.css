@@ -75,12 +75,14 @@ html, body {
 .menu-hamburger-content{
     display: none;
 }
-.modal-menu{
+.display-off{
     display: none;
+}
+.modal-menu{
     position: fixed;
     top: 0;
     left: 0;
-    width: 93%;
+    width: 50%;
     height: 100dvh;
     display: flex;
     flex-direction: column;
@@ -89,19 +91,11 @@ html, body {
     z-index: 999;
     background: rgba(58, 86, 34, 0.58);
     backdrop-filter: blur(6.6px);
-    transform: translateX(-100%);
-    animation: move-right .3s forwards;
+    /* transform: translateX(-100%); */
+    /* transition: transform 0.3s ease; */
 }
-@keyframes move-right{
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0%);
-    }
 
-}
-.modal-menu-content{
+.modal-menu--content{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -110,8 +104,8 @@ html, body {
     color: var(--color-white);
     cursor: pointer;
     gap: 60px;
-
 }
+
 .page-container{
     max-width: 1440px;
     display: flex;
@@ -371,7 +365,7 @@ img{
 }
 @media (max-width:750px) {
     .nav-content{
-        opacity: 0;
+        display: none;
     }
     .menu-hamburger-content{
         display: block;
@@ -384,17 +378,19 @@ img{
     .menu-hamburger-content label{
         cursor: pointer;
     }
-    .menu-hamburger-content input[type="checkbox"] {
+     .menu-hamburger-content input[type="checkbox"] {
         display: none;
+    }  
+
+    .menu-hamburger-content input[type="checkbox"]:checked ~ .modal-menu {
+        transform: translateX(0);
     }
-    .menu-hamburger-content input[id="menu-hamburger"]:checked ~ .nav-container .nav-content{
-        opacity: 1;
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        z-index: 999;
-        margin: 20px;
+
+    /* Inverser l'animation lorsque le checkbox est décoché */
+    .menu-hamburger-content input[type="checkbox"]:not(:checked) ~ .modal-menu {
+        transform: translateX(0);
     }
+
     .page-container{
         flex-direction: column;
         gap: 0px;
