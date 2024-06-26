@@ -1,0 +1,16 @@
+.logo{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+}
+.logo-img{
+    object-fit: cover;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #3A5622;
+    border-radius: 15px;
+}
