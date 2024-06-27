@@ -11,14 +11,42 @@
     <section class="section-contact">
     <header class="header-contact" >
         <div class="logo">
-            <img class="logo-img" src="./assets/images/logo/logo.webp" alt="Logo aquascape">
+            <a href="./index.html"><img class="logo-img" src="./assets/images/logo/logo.webp" alt="Logo aquascape">
+            </a>
             <h1 class="logo-title">Contacter nous</h1>
         </div>
     </header>
+    <form class="form-contact">
+        <label for="firstname">Nom</label>
+        <input type="text" id="firstname">
+        <label for="lasttname">Prenom</label>
+        <input type="text" id="lastname">
+        <label for="birth">Date de naissance</label>
+        <input type="date" id="birth">
+        <label for="email">Email</label>
+        <input type="text" id="email">
+        <label for="sexe">Sexe</label>
+        <label class="custom-radio" >
+            <input type="radio" id="sexe" name="sexe">Homme
+        </label>
+        <label class="custom-radio" >
+            <input type="radio" id="sexe" name="sexe">Femme
+        </label>
+        <button class="dropbtn">Sélectionner un sujet</button>
+        <label >
+            <input type="radio" name="sujet" value="devis">Infos 
+        </label>
+        <label >
+            <input type="radio" name="sujet" value="Conseils">Conseils
+        </label>
+        <label >
+            <input type="radio" name="sujet" value="Commandes">Commandes
+        </label>
+        <textarea  name="message" id="user-message"></textarea>
+        <button type="submit" >Envoyer</button>
+    </form>
 </section>
 
-<form class="form-contact">
 
-</form>
 </body>
 </html>

@@ -79,6 +79,9 @@ html, body {
     width: 100%;
     
 }
+
+/* Modale                   */
+
 .menu-hamburger-content{
     display: none;
 }
@@ -88,7 +91,7 @@ html, body {
 .modal-menu{
     position: fixed;
     top: 0;
-    left: 0;
+    left: -50%;
     width: 50%;
     height: 100dvh;
     display: flex;
@@ -99,7 +102,7 @@ html, body {
     background: rgba(58, 86, 34, 0.58);
     backdrop-filter: blur(6.6px);
     /* transform: translateX(-100%); */
-    /* transition: transform 0.3s ease; */
+    transition: left 0.3s ease;
 }
 
 .modal-menu--content{
@@ -185,6 +188,7 @@ html, body {
     gap: 40px;
     top: 75px;
     z-index: 3;
+    cursor: pointer;
 }
 .logo-img{
     object-fit: cover;
@@ -195,6 +199,14 @@ html, body {
     text-transform: uppercase;
     font-size: 1.2rem;
     font-weight: bold;
+}
+.form-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 /* end contact              */
 
@@ -445,13 +457,9 @@ img{
     }  
 
     .menu-hamburger-content input[type="checkbox"]:checked ~ .modal-menu {
-        transform: translateX(0);
+        left: 0%;
     }
 
-    /* Inverser l'animation lorsque le checkbox est décoché */
-    .menu-hamburger-content input[type="checkbox"]:not(:checked) ~ .modal-menu {
-        transform: translateX(0);
-    }
 
     .page-container{
         flex-direction: column;
