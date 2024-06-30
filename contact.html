@@ -1,52 +1,83 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aquascape</title>
 
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdn.lordicon.com/lordicon.js" defer></script>
 </head>
+
 <body>
     <section class="section-contact">
-    <header class="header-contact" >
-        <div class="logo">
-            <a href="./index.html"><img class="logo-img" src="./assets/images/logo/logo.webp" alt="Logo aquascape">
-            </a>
-            <h1 class="logo-title">Contacter nous</h1>
-        </div>
-    </header>
-    <form class="form-contact">
-        <label for="firstname">Nom</label>
-        <input type="text" id="firstname">
-        <label for="lasttname">Prenom</label>
-        <input type="text" id="lastname">
-        <label for="birth">Date de naissance</label>
-        <input type="date" id="birth">
-        <label for="email">Email</label>
-        <input type="text" id="email">
-        <label for="sexe">Sexe</label>
-        <label class="custom-radio" >
-            <input type="radio" id="sexe" name="sexe">Homme
-        </label>
-        <label class="custom-radio" >
-            <input type="radio" id="sexe" name="sexe">Femme
-        </label>
-        <button class="dropbtn">Sélectionner un sujet</button>
-        <label >
-            <input type="radio" name="sujet" value="devis">Infos 
-        </label>
-        <label >
-            <input type="radio" name="sujet" value="Conseils">Conseils
-        </label>
-        <label >
-            <input type="radio" name="sujet" value="Commandes">Commandes
-        </label>
-        <textarea  name="message" id="user-message"></textarea>
-        <button type="submit" >Envoyer</button>
-    </form>
-</section>
+        <header class="header-contact">
+            <div class="logo">
+                <a href="./index.html"><img class="logo-img" src="./assets/images/logo/logo.webp" alt="Logo aquascape">
+                </a>
+                <h1 class="logo-title">Contacter nous</h1>
+            </div>
+        </header>
+        <form class="form-contact">
+            <div class="form-contact-content">
+                <div class="form-group">
+                    <label for="firstname"></label>
+                    <input type="text" id="firstname" placeholder="Nom">
+                    <label for="lasttname"></label>
+                    <input type="text" id="lastname" placeholder="Prenom">
+                </div>
+                <div class="form-group">
+                    <label for="birth"></label>
+                    <input type="date" id="birth" placeholder="JJ/MM/AAAA" class="custom-date">
+                    <label for="email"></label>
+                    <input type="text" id="email" placeholder="Email">
+                </div>
+                <div class="form-group-row">
+                    <label for="sexe">Sexe:</label>
+                    <label class="custom-radio">
+                        <input type="radio" id="sexe" name="sexe">
+                        <span class="radio-button"></span>
+                        Homme
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" id="sexe" name="sexe">
+                        <span class="radio-button"></span>Femme
+                    </label>
+                </div>
+                <div class="form-group-row">
+                    <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle">
+                    <label for="dropdown-toggle" class="dropbtn">Choisissez votre sujets
+                        <lord-icon src="https://cdn.lordicon.com/xcrjfuzb.json" trigger="hover"
+                            colors="primary:#de8c20">
+                        </lord-icon>
+                    </label>
+                    <div class="dropdown-content">
+                        <label>
+                            <input type="radio" name="sujet" value="devis">Infos</br>
+                        </label>
+                        <label>
+                            <input type="radio" name="sujet" value="Conseils">Conseils
+                            </br>
+                        </label>
+                        <label>
+                            <input type="radio" name="sujet" value="Commandes">Commandes
+                            </br>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-text">
+                <textarea name="message" id="user-message" placeholder="Ajouter votre commentaire"></textarea>
+            </div>
+            <div class="form-btn-submit">
+                <button class="submit" type="submit">Envoyer</button>
+            </div>
+            </div>
+        </form>
+    </section>
 
 
 </body>
+
 </html>

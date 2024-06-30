@@ -1,0 +1,16 @@
+        TODO: 
+        - Terminer la gallery
+        - Faire la navigation
+        -- Desktop: une barre de navigation
+        -- Responsive: on affiche un btn hamburger
+        ---- Quand on clique sur le btn on affiche une modale
+        - Faire une section Formulaire « contact » : https://cdn.jotfor.ms/assets/img/landing/minimals/contact-form-generator/form03.png
+        - Champs : 
+        ---- Prénom
+        ---- Nom
+        ---- Date de naissance
+        ---- Email
+        ---- Sexe => radio custom => https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0JM9oGNK-cGSzZP7lsh4ElUIwNCHu3SXhf7owh1BQ1oTKwIG3vJoB_isck9OG0M3Y9Jk&usqp=CAU
+        ---- Dropdown sujets (avec plusieurs possibilités) => select custom => https://avaricum-bourges.com/emploi/
+        ---- Message
+        ---- Button envoyer
